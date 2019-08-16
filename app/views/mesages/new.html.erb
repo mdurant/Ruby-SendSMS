@@ -1,2 +1,15 @@
-<h1>Mesages#new</h1>
-<p>Find me in app/views/mesages/new.html.erb</p>
+<h3>Envie su SMS</h3>
+​
+<hr>
+​
+<%= form_with(url: 'messages', remote: false) do |form| %>
+  Mensaje: <%= form.text_area :message %><br><br>
+  Número: <%= form.text_field :number %><br><br>
+  <%= form.submit 'Enviar SMS' %>
+<% end %>
+​
+<hr>
+​
+<% if flash[:notice] %>
+  <div><%= flash[:notice] %></div>
+<% end %>
